@@ -4,11 +4,14 @@ import 'package:explorer/core/widgets/app_bar.dart';
 import 'package:explorer/core/widgets/avatar_image.dart';
 import 'package:explorer/core/widgets/titles.dart';
 import 'package:explorer/features/events/entities/event.dart';
+import 'package:explorer/features/events/presentations/view_all.dart';
 import 'package:explorer/features/events/presentations/widgets/focused_event_widget.dart';
 import 'package:explorer/features/events/presentations/widgets/row_event_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+enum EventsPageSections { nearest, all }
 
 class EventsListView extends StatelessWidget {
   const EventsListView({super.key});
@@ -27,11 +30,23 @@ class EventsListView extends StatelessWidget {
         top: Dimensions.edgePadding,
       ),
       children: [
-        titleWithViewAll(title: 'On the top of the list'),
+        titleWithViewAll(
+          title: 'Nearest events',
+          onViewAllTapped: () => Get.to(
+            () => const ViewAllEvents(section: EventsPageSections.nearest),
+          ),
+        ),
         const SizedBox(height: Dimensions.defPadding),
         _onTheTopOfTheList(),
-        const SizedBox(height: Dimensions.edgePadding),
-        titleWithViewAll(title: 'Events'),
+        const SizedBox(height: 8),
+        titleWithViewAll(
+          title: 'Events',
+          onViewAllTapped: () => Get.to(
+            () => const ViewAllEvents(
+              section: EventsPageSections.all,
+            ),
+          ),
+        ),
         const SizedBox(height: Dimensions.defPadding),
         _ourEvents()
       ],
@@ -60,7 +75,7 @@ class EventsListView extends StatelessWidget {
               const SizedBox(height: Dimensions.smallPadding),
           itemBuilder: (context, idx) => rowEventWidget(
             eventModel: EventModel.fromJson(snapshot.data!.docs[idx]),
-            section: 'events',
+            section: EventsPageSections.all,
           ),
           physics: const BouncingScrollPhysics(),
         );
@@ -93,7 +108,7 @@ class EventsListView extends StatelessWidget {
                 const SizedBox(width: Dimensions.smallPadding),
             itemBuilder: (context, idx) => focusedEventWidget(
               eventModel: EventModel.fromJson(snapshot.data!.docs[idx]),
-              section: 'on_the_top_of_the_list',
+              section: EventsPageSections.nearest,
             ),
           );
         },

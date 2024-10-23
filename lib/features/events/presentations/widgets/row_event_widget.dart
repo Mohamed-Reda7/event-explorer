@@ -4,15 +4,16 @@ import 'package:explorer/core/style/dimensions.dart';
 import 'package:explorer/core/style/fonts.dart';
 import 'package:explorer/features/events/entities/event.dart';
 import 'package:explorer/features/events/presentations/event_details.dart';
+import 'package:explorer/features/events/presentations/events_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 rowEventWidget({
   required EventModel eventModel,
-  required String section,
+  required EventsPageSections section,
 }) {
-  final heroTag = eventModel.id + section;
+  final heroTag = eventModel.id + section.name;
   return InkWell(
     onTap: () => Get.to(
       () => EventDetailsView(

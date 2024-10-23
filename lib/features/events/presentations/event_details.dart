@@ -12,6 +12,7 @@ import 'package:intl/intl.dart';
 class EventDetailsView extends StatelessWidget {
   final EventModel eventModel;
   final String heroTag;
+
   const EventDetailsView({
     super.key,
     required this.eventModel,
