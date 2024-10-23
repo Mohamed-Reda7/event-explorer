@@ -30,7 +30,7 @@ class EventsListView extends StatelessWidget {
         top: Dimensions.edgePadding,
       ),
       children: [
-        titleWithViewAll(
+        TitleWithViewAll(
           title: 'Nearest events',
           onViewAllTapped: () => Get.to(
             () => const ViewAllEvents(section: EventsPageSections.nearest),
@@ -39,7 +39,7 @@ class EventsListView extends StatelessWidget {
         const SizedBox(height: Dimensions.defPadding),
         _onTheTopOfTheList(),
         const SizedBox(height: 8),
-        titleWithViewAll(
+        TitleWithViewAll(
           title: 'Events',
           onViewAllTapped: () => Get.to(
             () => const ViewAllEvents(
@@ -120,7 +120,7 @@ class EventsListView extends StatelessWidget {
     return customAppBar(
       title: 'Event Explorer',
       actions: [
-        customCircleAvatar(
+        const CustomCircleAvatar(
           imgPath:
               'https://img.freepik.com/premium-photo/3d-style-avatar-profile-picture-featuring-male-character-generative-ai_739548-13626.jpg',
         ),

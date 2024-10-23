@@ -4,7 +4,9 @@ import 'package:explorer/core/style/colors.dart';
 import 'package:explorer/core/style/dimensions.dart';
 import 'package:explorer/core/style/fonts.dart';
 import 'package:explorer/core/widgets/app_bar.dart';
+import 'package:explorer/core/widgets/button.dart';
 import 'package:explorer/features/events/entities/event.dart';
+import 'package:explorer/features/events/presentations/widgets/joining_confirmation_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -71,22 +73,9 @@ class EventDetailsView extends StatelessWidget {
             padding: const EdgeInsets.all(Dimensions.edgePadding),
             child: Column(
               children: [
-                Container(
-                  width: Get.width,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: AppColorsManager.primaryColor,
-                    borderRadius:
-                        BorderRadius.circular(Dimensions.mediumRadius),
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Join Event',
-                    style: AppFontsManager.regularTextStyle(
-                      color: Colors.white,
-                      fontSize: Dimensions.h1FontSize,
-                    ),
-                  ),
+                CustomButtonWidget(
+                  bodyTxt: 'Join Event',
+                  onTap: () => showJoiningConfirmationDialog(),
                 ),
               ],
             ),
