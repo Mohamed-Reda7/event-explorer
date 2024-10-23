@@ -1,0 +1,42 @@
+name: explorer
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  firebase: null
+  firebase_core: null
+  cloud_firestore: null
+  get: null
+  intl: null
+  cached_network_image: null
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/fonts/
+
+  fonts:
+    - family: Open-Sans
+      fonts:
+        - asset: assets/fonts/open-sans/OpenSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/open-sans/OpenSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/open-sans/OpenSans-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/open-sans/OpenSans-Light.ttf
+          weight: 300
+ 

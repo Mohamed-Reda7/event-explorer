@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "584396532931",
+    "project_id": "event-explorer-394ef",
+    "storage_bucket": "event-explorer-394ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584396532931:android:c40539a6f6928ed75b0676",
+        "android_client_info": {
+          "package_name": "com.events.expl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXfQw7BooS2BesNmIfkI0NLhXL2EP6308"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584396532931:android:72bac46b8383fb645b0676",
+        "android_client_info": {
+          "package_name": "com.events.explorer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXfQw7BooS2BesNmIfkI0NLhXL2EP6308"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
